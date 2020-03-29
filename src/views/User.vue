@@ -1,10 +1,6 @@
 <template>
   <div class="user">
-    <div class="navigation-bar">
-      <i class="iconfont ali-xiaoarrow-lift"></i>
-      <span>个人中心</span>
-      <i class="iconfont ali-xiaonew"></i>
-    </div>
+    <navigation :navigationtitle="navigationtitle"></navigation>
     <header>
       <div class="left-detail">
         <img :src="$axios.defaults.baseURL+userInfo.head_img" />
@@ -33,16 +29,19 @@
 </template>
 
 <script>
+import navigation from "@/components/Navigatebar";
 import Listbar from "@/components/Listbar";
 export default {
   name: "user",
 
   data() {
     return {
+      navigationtitle: "个人中心",
       rows: [
         { label: "我的关注", tips: "关注的用户" },
         { label: "我的跟帖", tips: "跟帖回复" },
-        { label: "我的收藏", tips: "文章视频" }
+        { label: "我的收藏", tips: "文章视频" },
+        { label: "设置", tips: "" }
       ],
       userInfo: {}
     };
@@ -84,7 +83,8 @@ export default {
   },
 
   components: {
-    Listbar
+    Listbar,
+    navigation
   }
 };
 </script>
