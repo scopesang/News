@@ -55,7 +55,9 @@ export default {
       this.update({ password: this.password });
     },
     changenickname() {
-      this.update({ nickname: this.value });
+      const promis = this.update({ nickname: this.value });
+      console.log("changenickname", promis);
+
       this.userInfo.nickname = this.value;
     },
     onSelect(item) {
@@ -93,7 +95,7 @@ export default {
     },
 
     update(data) {
-      this.$axios({
+      return this.$axios({
         url: "/user_update/" + this.userInfo.id,
         method: "POST",
         // 添加头信息

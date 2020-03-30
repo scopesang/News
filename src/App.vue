@@ -7,6 +7,10 @@
 </template>
 
 <style lang="less">
+* {
+  padding: 0;
+  margin: 0;
+}
 @import url("../node_modules/vant/lib/index.css");
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

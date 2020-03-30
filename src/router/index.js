@@ -35,7 +35,23 @@ const routes = [
     path: '/editprofile',
     name: 'Editprofile',
     component: () => import('../views/Editprofile')
+  },
+  {
+    path: '/follow',
+    name: 'follow',
+    component: () => import('../views/Follow.vue')
+  },
+  {
+    path: '/star',
+    name: 'star',
+    component: () => import('../views/Star.vue')
+  },
+  {
+    path: '/comment',
+    name: 'comment',
+    component: () => import('../views/Comment')
   }
+
 ]
 
 const router = new VueRouter({
